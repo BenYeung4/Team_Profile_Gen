@@ -18,5 +18,8 @@
   "homepage": "https://github.com/BenYeung4/Team_Profile_Gen#readme",
   "devDependencies": {
     "jest": "^28.1.1"
+  },
+  "dependencies": {
+    "inquirer": "^9.0.0"
   }
 }
