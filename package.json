@@ -1,0 +1,22 @@
+{
+  "name": "team_profile_gen",
+  "version": "1.0.0",
+  "description": ".\r ├── **tests**/ //jest tests\r │ ├── Employee.test.js\r │ ├── Engineer.test.js\r │ ├── Intern.test.js\r │ └── Manager.test.js\r ├── dist/ // rendered output (HTML) and CSS style sheet  \r ├── lib/ // classes\r ├── src/ // template helper code\r ├── .gitignore // indicates which folders and files Git should ignore\r ├── index.js // runs the application\r └── package.json",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenYeung4/Team_Profile_Gen.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BenYeung4/Team_Profile_Gen/issues"
+  },
+  "homepage": "https://github.com/BenYeung4/Team_Profile_Gen#readme",
+  "devDependencies": {
+    "jest": "^28.1.1"
+  }
+}
