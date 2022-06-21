@@ -6,3 +6,12 @@ test("creates a employee object", () => {
   expect(employee.name).toBe("class");
   expect(employee.value).toEqual(expect.any(Number));
 });
+
+//name
+//id
+//email
+//getName()
+//getId()
+//getEmail()
+//getRole()
+//return employee
