@@ -1,5 +1,5 @@
 //generated page
-//const pagetemplate = require("./src/page-template");
+const generateHTML = require("./src/generateHTML");
 
 //library
 const Engineer = require("./lib/Engineer");
@@ -13,7 +13,7 @@ const util = require("util");
 const fs = require("fs");
 
 //team array
-//const team = [];
+const teamData = [];
 
 const promptManager = () => {
   return inquirer
@@ -80,16 +80,13 @@ const promptManager = () => {
     });
 };
 
-const promptEmployee = (teamData) => {
-  if (!teamData.team) {
-    teamData.team = [];
-  }
-
+const promptEmployee = () => {
   console.log(`
   =================
-  Add a Team
+  Add the Team
   =================
   `);
+
   return inquirer
     .prompt([
       {
@@ -178,7 +175,6 @@ const promptEmployee = (teamData) => {
 
       if (role === "Engineer") {
         employee = new Engineer(name, id, email, github);
-
         console.log(employee);
       } else if (role === "Intern") {
         employee = new Intern(name, id, email, school);
@@ -188,7 +184,7 @@ const promptEmployee = (teamData) => {
       teamData.push(employee);
 
       if (AddEmployee) {
-        return AddEmployee(teamData);
+        return promptEmployee(teamData);
       } else {
         return teamData;
       }
@@ -196,24 +192,24 @@ const promptEmployee = (teamData) => {
 };
 
 //funtion to generate HTML
-// const generateHTML = (data) => {
-//   fs.generateHTML("./dist/index.html", data, (err) => {
-//     if (err) {
-//       console.log(err);
-//       return;
-//     } else {
-//       console.log("team has been created");
-//     }
-//   });
-// };
+const writeFile = (projectData) => {
+  fs.writeFile("./dist/index.html", projectData, (err) => {
+    if (err) {
+      console.log(err);
+      return;
+    } else {
+      console.log("team has been created");
+    }
+  });
+};
 
 promptManager()
   .then(promptEmployee)
   .then((teamData) => {
-    return page - template(teamData);
+    return generateHTML(teamData);
   })
   .then((pageHTML) => {
-    return fs.writeFile(pageHTML);
+    return writeFile(pageHTML);
   })
   .catch((err) => {
     console.log(err);
