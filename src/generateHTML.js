@@ -1,7 +1,7 @@
 // Creates the manager card
 const generateManager = (manager) => {
   return `
-    <div class = "col-4">
+    <div class = "col-4 mt-4">
         <div class = "card h-100">
             <div class = "card-header">
             <h1>${manager.name}</h1>
@@ -10,7 +10,7 @@ const generateManager = (manager) => {
 
         <div class = "card-body">
             <p class ="id"> ID: ${manager.id}</p>
-            <p class ="email"> Email: <a href="mailto: ${manager.email}"</p>
+            <p class ="email"> Email: <a href="mailto: ${manager.email}"> </a></p>
             <p class ="office"> Office Number: ${manager.officNumber}</p>
         </div>
     </div>
@@ -96,32 +96,34 @@ generateHTML = (data) => {
 //html template
 const generateTeamGroup = function (employeeCards) {
   return `
-      <!DOCTYPE html>
-      <html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
   
-      <head>
-        <meta charset = "UTF-8">
-        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Portfolio Demo</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-      </head>
+    <head>
+      <meta charset = "UTF-8">
+      <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Team Profile</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <header class="text-center border border-dark text-light col-12 bg-primary">
+        <h1>Team Profile</h1>
+      </header>
 
-        <body>
-        <header>
-          <div class="container flex-row justify-space-between align-center py-3">
+      <main>
+        <div class = "container">
+          <div class = "row justify-content-center" id ="team-cards">
+            ${employeeCards}
           </div>
-        </header>
-        <main class="container my-5">
-              ${employeeCards}
-        </main>
-        <footer class="container text-center py-3">
-        </footer>
-      </body>
-      </html>
-      `;
+        </div>
+      </main>
+
+    </body>
+  </html>
+  `;
 };
 
 module.exports = generateHTML;
