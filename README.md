@@ -1,32 +1,51 @@
 # Team_Profile_Gen
 
-.
-├── **tests**/ //jest tests
-│ ├── Employee.test.js
-│ ├── Engineer.test.js
-│ ├── Intern.test.js
-│ └── Manager.test.js
-├── dist/ // rendered output (HTML) and CSS style sheet  
-├── lib/ // classes
-├── src/ // template helper code
-├── .gitignore // indicates which folders and files Git should ignore
-├── index.js // runs the application
-└── package.json
+MISSING LICENSE BADGE & LINK
 
-GIVEN a command-line application that accepts user input
-WHEN I am prompted for my team members and their information
-THEN an HTML file is generated that displays a nicely formatted team roster based on user input
-WHEN I click on an email address in the HTML
-THEN my default email program opens and populates the TO field of the email with the address
-WHEN I click on the GitHub username
-THEN that GitHub profile opens in a new tab
-WHEN I start the application
-THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
-WHEN I enter the team manager’s name, employee ID, email address, and office number
-THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
-WHEN I select the engineer option
-THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
-WHEN I select the intern option
-THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
-WHEN I decide to finish building my team
-THEN I exit the application, and the HTML is generated
+## Description
+
+A Node.js command-line application that takes in information about employees on a software engineering team and generates an HTML webpage that displays summaries for each employee.
+
+## Table of Content
+
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Contributing](#Contributing)
+- [Tests](#Tests)
+- [License](#License)
+- [Questions](#Questions)
+
+## Installation
+
+Please install the following dependencies to run the application properly:
+
+first, npm int for the package.json. There was issues with inquirer when I was using it and had to downgrade to an earlier version. npm install inquirer 8.2.4
+
+## Usage:
+
+Below are the instructions and examples for use:
+node index, to run the program, enter information for manager, then selectt either Engineer or Intern, add their information in. Select to add another employee if there is. If not, then press no. It should populate the website in the dist folder. Run that and it should show what was inputed populate
+
+Screenshot located at:
+
+## Contributors:
+
+Tailwind
+
+## Tests:
+
+The following are needed to run the test:
+npm int, npm install, npm init inquirer version(an older version if the current version does not function), npm run test (to see the tests run), node index
+
+## License under the following:
+
+### MISSING LICENSE BADGE & LINK
+
+This application is licensed under the MISSING LICENSE LINK
+
+## Questions
+
+If you have any questions, please open a issue or contact the following:
+
+Github Profile Contact: https://github.com/Benyeung4
+Email Contact: byeungis@gmail.com
