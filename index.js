@@ -20,7 +20,7 @@ const promptManager = () => {
     .prompt([
       {
         type: "input",
-        name: "manager",
+        name: "name",
         message: "What is the manager's name?(Required)",
         validate: (nameInput) => {
           if (nameInput) {
@@ -143,7 +143,7 @@ const promptEmployee = () => {
           if (nameInput) {
             return true;
           } else {
-            console.log("Please enter employee's github username");
+            console.log("Please enter engineer's github username");
             return false;
           }
         },
@@ -157,7 +157,7 @@ const promptEmployee = () => {
           if (nameInput) {
             return true;
           } else {
-            console.log("Please enter employee's school");
+            console.log("Please enter intern's school");
             return false;
           }
         },

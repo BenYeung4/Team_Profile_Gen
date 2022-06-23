@@ -1,17 +1,16 @@
 // Creates the manager card
 const generateManager = (manager) => {
   return `
-    <div class = "col-4 mt-4">
-        <div class = "card h-100">
-            <div class = "card-header">
+    <div class = "card flex flex-wrap gap-4 border">
+        <div class = "card">
+          <div class = "card-header">
             <h1>${manager.name}</h1>
             <h2>Manager</h2> 
-        </div>
-
-        <div class = "card-body">
+          </div>
+          <div class = "card-body">
             <p class ="id"> ID: ${manager.id}</p>
-            <p class ="email"> Email: <a href="mailto: ${manager.email}"> </a></p>
-            <p class ="office"> Office Number: ${manager.officNumber}</p>
+            <p class ="email"> Email: <a href="mailto: ${manager.email}">${manager.email}</a></p>
+            <p class ="office"> Office Number: ${manager.officeNumber}</p>
         </div>
     </div>
     `;
@@ -20,8 +19,8 @@ const generateManager = (manager) => {
 // Creates the Engineer card
 const generateEngineer = (engineer) => {
   return `
-      <div class = "col-4">
-          <div class = "card h-100">
+      <div class = "card flex flex-wrap gap-4 border">
+          <div class = "card">
               <div class = "card-header">
               <h1>${engineer.name}</h1>
               <h2>Engineer</h2> 
@@ -29,8 +28,8 @@ const generateEngineer = (engineer) => {
   
           <div class = "card-body">
             <p class ="id"> ID: ${engineer.id}</p>
-            <p class ="email"> Email: <a href="mailto: ${engineer.email}>"</p>
-            <p class ="github"> Github: <a href = "https://github.com/${engineer.github}></p>
+            <p class ="email"> Email: <a href="mailto: ${engineer.email}">${engineer.email}</a></p>
+            <p class ="github"> Github: <a href = "https://github.com/${engineer.github}"> ${engineer.github} </a></p>
         </div>
     </div>
     `;
@@ -39,8 +38,8 @@ const generateEngineer = (engineer) => {
 // Creates the Intern card
 const generateIntern = (intern) => {
   return `
-        <div class = "col-4">
-            <div class = "card h-100">
+        <div class = "card flex flex-wrap gap-4 border">
+            <div class = "card">
                 <div class = "card-header">
                 <h1>${intern.name}</h1>
                 <h2>Intern</h2> 
@@ -48,7 +47,7 @@ const generateIntern = (intern) => {
     
             <div class = "card-body">
               <p class ="id"> ID: ${intern.id}</p>
-              <p class ="email"> Email: <a href="mailto: ${intern.email}>"</p>
+              <p class ="email"> Email: <a href="mailto: ${intern.email}">${intern.email}</a></p>
               <p class ="school"> School: ${intern.school}</p>
           </div>
       </div>
@@ -104,18 +103,18 @@ const generateTeamGroup = function (employeeCards) {
       <meta name = "viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>Team Profile</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-      <link href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
+      <script src="https://cdn.tailwindcss.com"></script>
       <link rel="stylesheet" href="style.css">
     </head>
     <body>
-      <header class="text-center border border-dark text-light col-12 bg-primary">
+      <header class="">
         <h1>Team Profile</h1>
       </header>
 
       <main>
         <div class = "container">
           <div class = "row justify-content-center" id ="team-cards">
+            <!--Cards-->
             ${employeeCards}
           </div>
         </div>
